@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep xfs)
-DISK_THRESHOLD= 70
+DISK_THRESHOLD=6
 MESSAGE=""
 
 while IFS= read -r line
@@ -15,5 +15,3 @@ do
 done <<< $DISK_USAGE
 
 echo -e "Message: $MESSAGE"
-
-# echo "$MESSAGE" | mail -s "Disk Usage Alert" rao.lingaiah@gmail.com
